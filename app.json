@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "Overlord Docs",
+    "slug": "Overlord",
+    "version": "0.0.0",
+    "orientation": "portrait",
+    "icon": "./shared/assets/images/overlord.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#202029",
+    "splash": {
+      "image": "./shared/assets/images/splash.png",
+      "resizeMode": "contain"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./shared/assets/images/overlord.png",
+        "backgroundColor": "#202029"
+      }
+    },
+    "androidNavigationBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#202029",
+      "visible": "immersive"
+    },
+    "web": {
+      "favicon": "./shared/assets/images/overlord.png",
+      "publicPath": "/static/documentation"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "This app allows you to upload photos.",
+          "cameraPermission": "This app allows you to take & upload photos."
+        }
+      ],
+      [
+        "expo-document-picker",
+        {
+          "iCloudContainerEnvironment": "Production"
+        }
+      ]
+    ]
+  }
+}
