@@ -30,33 +30,41 @@ const Home = () => {
   const fadeAnimationReactLogo = useRef(new Animated.Value(0)).current;
   const fadeAnimationDjangoLogo = useRef(new Animated.Value(0)).current;
   const fadeAnimationRedisLogo = useRef(new Animated.Value(0)).current;
+  const fadeAnimationMenuButtons = useRef(new Animated.Value(0)).current;
 
   if (!fadeAnimationTriggered.current) {
     Animated.timing(fadeAnimationHeader, {
       toValue: 1,
-      duration: 1250,
+      duration: 750,
       useNativeDriver: Platform.OS !== 'web'
-    }).start(() => Animated.timing(fadeAnimationHeaderLogo, {
+    }).start(() => {
+      Animated.timing(fadeAnimationMenuButtons, {
+        toValue: 1,
+        duration: 750,
+        useNativeDriver: Platform.OS !== 'web'
+      }).start();
+      Animated.timing(fadeAnimationHeaderLogo, {
       toValue: 0.25,
       duration: 750,
       useNativeDriver: Platform.OS !== 'web'
-    }).start(() => Animated.timing(fadeAnimationAwsLogo, {
-      toValue: 0.75,
-      duration: 750,
-      useNativeDriver: Platform.OS !== 'web'
-    }).start(() => Animated.timing(fadeAnimationReactLogo, {
-      toValue: 0.75,
-      duration: 750,
-      useNativeDriver: Platform.OS !== 'web'
-    }).start(() => Animated.timing(fadeAnimationDjangoLogo, {
-      toValue: 0.75,
-      duration: 750,
-      useNativeDriver: Platform.OS !== 'web'
-    }).start(() => Animated.timing(fadeAnimationRedisLogo, {
-      toValue: 0.75,
-      duration: 750,
-      useNativeDriver: Platform.OS !== 'web'
-    }).start())))));
+      }).start(() => Animated.timing(fadeAnimationAwsLogo, {
+        toValue: 0.75,
+        duration: 750,
+        useNativeDriver: Platform.OS !== 'web'
+      }).start(() => Animated.timing(fadeAnimationReactLogo, {
+        toValue: 0.75,
+        duration: 750,
+        useNativeDriver: Platform.OS !== 'web'
+      }).start(() => Animated.timing(fadeAnimationDjangoLogo, {
+        toValue: 0.75,
+        duration: 750,
+        useNativeDriver: Platform.OS !== 'web'
+      }).start(() => Animated.timing(fadeAnimationRedisLogo, {
+        toValue: 0.75,
+        duration: 750,
+        useNativeDriver: Platform.OS !== 'web'
+      }).start()))));
+    });
     fadeAnimationTriggered.current = true;
   }
 
@@ -91,7 +99,7 @@ const Home = () => {
       />
     </View>
 
-    <Animated.View style={[ style.contentContainer, { opacity: fadeAnimationHeader } ]}>
+    <Animated.View style={[ style.contentContainer, { opacity: fadeAnimationMenuButtons } ]}>
       <CTA
         buttonText="Documentation"
         labelText="Learn more"

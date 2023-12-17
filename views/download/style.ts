@@ -22,5 +22,12 @@ export default StyleSheet.create({
     color: "#FE8605",
     fontSize: 24,
     fontFamily: "Metro"
+  },
+
+  subTitle: {
+    paddingVertical: 9,
+    color: "#FE8605",
+    fontSize: 18,
+    fontFamily: "Metro"
   }
 });
