@@ -1,9 +1,9 @@
 {
   "name": "overlord",
   "version": "0.0.0",
-  "homepage": "/static/documentation",
+  "homepage": "/static/overlord",
   "main": "node_modules/expo/AppEntry.js",
-  "api": "git@github.com:EasterCompany/RDFS-API.git",
+  "api": "git@github.com:EasterCompany/Overlord-Documentation-API.git",
   "scripts": {
     "start": "env-cmd -f .env npx expo start --web --clear",
     "build": "env-cmd -f .env npx expo export:web --clear"

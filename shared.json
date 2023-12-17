@@ -1,5 +1,5 @@
 {
-  "path": "clients/docs/shared",
+  "path": "clients/overlord/shared",
   "file": [],
   "module": [
     "assets/",
