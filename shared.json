@@ -1,13 +1,11 @@
 {
-  "path": "clients/documentation/shared",
-  "file": [
-  ],
+  "path": "clients/docs/shared",
+  "file": [],
   "module": [
     "assets/",
-    "components/buttons-native/",
-    "components/inputs-native/",
-    "components/modals-native/",
-    "components/navbar-native/",
-    "library/"
+    "components/",
+    "hooks/",
+    "library/",
+    "views/"
   ]
 }

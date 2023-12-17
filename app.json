@@ -4,11 +4,11 @@
     "slug": "Overlord",
     "version": "0.0.0",
     "orientation": "portrait",
-    "icon": "./shared/assets/images/overlord.png",
+    "icon": "./shared/assets/image/overlord.png",
     "userInterfaceStyle": "dark",
     "backgroundColor": "#202029",
     "splash": {
-      "image": "./shared/assets/images/splash.png",
+      "image": "./shared/assets/image/splash.png",
       "resizeMode": "contain"
     },
     "assetBundlePatterns": [
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./shared/assets/images/overlord.png",
+        "foregroundImage": "./shared/assets/image/overlord.png",
         "backgroundColor": "#202029"
       }
     },
@@ -29,7 +29,7 @@
       "visible": "immersive"
     },
     "web": {
-      "favicon": "./shared/assets/images/overlord.png",
+      "favicon": "./shared/assets/image/overlord.png",
       "publicPath": "/static/documentation"
     },
     "plugins": [

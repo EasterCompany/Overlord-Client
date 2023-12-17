@@ -4,7 +4,7 @@ from core.library import Path, client, dirname, realpath
 class Client(client.NativeClient):
   ENV:str = __file__.replace('__init__.py', '.env')
   DIR:str = Path(dirname(realpath(__file__))).parts[-1]
-  NAME:str = "Overlord Documentation"
+  NAME:str = "Overlord"
   PWA:bool = False
   API_DOMAIN:str = "https://overlord.easter.company"
 

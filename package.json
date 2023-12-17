@@ -15,10 +15,14 @@
     "@expo/webpack-config": "^19.0.0",
     "@native-html/iframe-plugin": "^2.6.1",
     "@react-native-async-storage/async-storage": "1.18.2",
+    "@tsparticles/engine": "^3.0.2",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.0.2",
     "@types/react": "18.2.22",
     "env-cmd": "10.1.0",
     "expo": "49.0.11",
     "expo-av": "~13.4.1",
+    "expo-clipboard": "~4.3.1",
     "expo-document-picker": "~11.5.4",
     "expo-font": "~11.4.0",
     "expo-image-picker": "~14.3.2",
@@ -27,7 +31,7 @@
     "html-loader": "^4.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-native": "0.72.5",
+    "react-native": "0.72.6",
     "react-native-dotenv": "3.4.9",
     "react-native-dropdown-select-list": "^2.0.5",
     "react-native-web": "~0.19.6",
@@ -47,8 +51,7 @@
     "workbox-routing": "^6.1.5",
     "workbox-strategies": "^6.1.5",
     "workbox-streams": "^6.1.5",
-    "workbox-webpack-plugin": "^6.1.5",
-    "expo-clipboard": "~4.3.1"
+    "workbox-webpack-plugin": "^6.1.5"
   },
   "private": true
 }
