@@ -103,7 +103,7 @@ const Home = () => {
       <CTA
         buttonText="Documentation"
         labelText="Learn more"
-        onPress={() => nativeEvent.emit("navChangeView", "docs")}
+        onPress={() => nativeEvent.emit("navChangeView", "docs:home")}
       />
       <CTA
         buttonText="Download Latest"

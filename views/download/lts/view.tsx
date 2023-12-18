@@ -21,7 +21,7 @@ const DownloadLTS = () => {
       </Text>
       <OSSelect selected={selected} setSelected={setSelected}/>
       <Divider/>
-      <DownloadButtons options={selected}/>
+      <DownloadButtons channel="lts" options={selected}/>
     </View>
   </View>
 }

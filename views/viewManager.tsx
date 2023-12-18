@@ -11,6 +11,7 @@ import Loading from '../shared/views/loading/view';
 import ServerOffline from '../shared/views/serverOffline/view';
 import DownloadLatest from './download/latest/view';
 import DownloadLTS from './download/lts/view';
+import Docs from './docs/view';
 
 const eventEmitter = new NativeEventEmitter();
 
@@ -36,7 +37,7 @@ const ViewManager = ({ user, isLoggedIn }) => {
   >{
     currentView === "home" ? <Home/> :
     currentView === "serverOffline" ? <ServerOffline/> :
-    currentView === "docs" ? <></> :
+    currentView.startsWith("docs:") ? <Docs currentView={currentView}/> :
     currentView === "download:latest" ? <DownloadLatest/> :
     currentView === "download:lts" ? <DownloadLTS/> :
     <Loading/>

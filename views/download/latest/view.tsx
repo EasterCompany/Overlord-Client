@@ -17,7 +17,7 @@ const DownloadLatest = () => {
       <Text style={style.title}>Download Latest Version</Text>
       <OSSelect selected={selected} setSelected={setSelected}/>
       <Divider/>
-      <DownloadButtons options={selected}/>
+      <DownloadButtons channel="latest" options={selected}/>
     </View>
   </View>
 }
