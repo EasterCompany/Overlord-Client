@@ -15,6 +15,7 @@ import ImageButton from '../../shared/components/button/image';
 // Hooks
 import useDimensions from '../../shared/hooks/useDimensions';
 // Library
+import { api } from '../../shared/library/api';
 import { useState, useRef, useEffect } from 'react';
 import { View, ScrollView, Pressable, Image, Text, Animated, Platform, NativeEventEmitter } from 'react-native';
 
@@ -23,6 +24,7 @@ const setDoc = (doc:string) => nativeEvent.emit('navChangeView', `docs:${doc}`);
 
 const SideBar = ({ isVisible, setVisible, isDarkMode, setDarkMode }) => {
   const [w, v, s] = useDimensions();
+  const [docs, setDocs] = useState(null);
   const slideAnimation = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -35,37 +37,30 @@ const SideBar = ({ isVisible, setVisible, isDarkMode, setDarkMode }) => {
         useNativeDriver: Platform.OS !== 'web'
       }).start(() => setVisible(toToggle))
     })
+
+    if (docs === null) api(
+      'documentation/survey',
+      (resp) => setDocs({}),
+      (resp) => {
+        setDocs(resp);
+        console.log(resp);
+      }
+    );
+
     return () => toggleVisibleEvent.remove();
   }, [isVisible])
 
   return <Animated.View style={[ style.container, { left: slideAnimation } ]}>
     <Header isDarkMode={isDarkMode} toggleDarkMode={() => setDarkMode(!isDarkMode)} isVisible={isVisible}/>
     <ScrollView style={[ style.scrollContainer, { height: v.height - 48 } ]}>
-      <Dropdown label="Getting Started" openByDefault={true}>
-        <Option label="Introduction" docId="getting_started/introduction"/>
-        <Option label="Install (Linux)" docId="getting_started/install_linux"/>
-        <Option label="Install (Windows)" docId="getting_started/install_windows"/>
-        <Option label="Install (MacOSX)" docId="getting_started/install_darwin"/>
-        <Option label="Basic Setup" docId="getting_started/basic_setup"/>
-      </Dropdown>
-      <Dropdown label="Command Line Interface" openByDefault={true}>
-        <Option label="Git"/>
-        <Option label="Server"/>
-        <Option label="Client"/>
-        <Option label="Sharing"/>
-        <Option label="API"/>
-        <Option label="Redis"/>
-        <Option label="Nginx"/>
-      </Dropdown>
-      <Dropdown label="Library" openByDefault={true}>
-        <Option label="Server API"/>
-        <Option label="Client API"/>
-        <Option label="User & Session"/>
-      </Dropdown>
-      <Dropdown label="Deployment" openByDefault={true}>
-        <Option label="AWS (Lightsail)"/>
-        <Option label="Python Anywhere"/>
-      </Dropdown>
+      {docs !== null && Object.keys(docs).map((x) => {
+        const category = docs[x];
+        return <Dropdown label={category.title} openByDefault={true}>
+          {category.docs.map((doc) => {
+            return <Option label={doc.title} docId={`${category.source}/${doc.source}`}/>
+          })}
+        </Dropdown>
+      })}
     </ScrollView>
   </Animated.View>
 }
