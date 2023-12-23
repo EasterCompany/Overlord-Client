@@ -1,7 +1,7 @@
 // Assets
 import style from '../style';
 // Components
-import BackButton from '../backButton/backButton';
+import BackButton from '../../../components/backButton/backButton';
 import OSSelect from '../osSelect/osSelect';
 import Divider from '../divider/divider';
 import DownloadButtons from '../downloadButtons/downloadButtons';

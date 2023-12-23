@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   container: {
+    zIndex: 1,
     position: "absolute",
     top: 0,
     left: 0,
@@ -18,20 +19,16 @@ export default StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
     width: "100%",
-    height: 48,
-    borderTopWidth: 0,
-    borderLeftWidth: 0,
-    borderRightWidth: 0,
-    borderBottomWidth: 0,
-    borderBottomColor: "#00000033"
+    height: 48
   },
 
   headerButtonsSection: {
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    width: "calc(100% - 52px)",
-    height: "100%"
+    width: "100%",
+    height: "100%",
+    paddingLeft: 16
   },
 
   headerRetractSidebarButton: {
@@ -39,10 +36,12 @@ export default StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: 32,
-    height: "100%"
+    height: "100%",
+    marginLeft: -52,
   },
 
   headerButtonContainer: {
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     width: 32,
@@ -56,8 +55,8 @@ export default StyleSheet.create({
   },
 
   headerButtonImage: {
-    width: 28,
-    height: 28
+    width: 22,
+    height: 22
   },
 
   scrollContainer: {
@@ -83,6 +82,7 @@ export default StyleSheet.create({
   },
 
   dropdownLabel: {
+    userSelect: 'none',
     color: "#FFFFFF",
     fontFamily: "Metro",
     fontSize: 16
@@ -91,5 +91,13 @@ export default StyleSheet.create({
   dropdownChevron: {
     width: 20,
     height: 20
+  },
+
+  dropdownMenu: {
+    overflow: "hidden",
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    backgroundColor: '#00000033'
   }
 });

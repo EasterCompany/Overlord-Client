@@ -68,8 +68,8 @@ const DownloadButtons = ({ channel, options }) => {
     {downloaded === true && <>
       <Text style={viewStyle.subTitle}>Getting Started:</Text>
       <Text style={style.docsText}>
-        Learn how to install, setup, configure & begin building applications with Overlord by using our beautifully
-        crafted documentation which is accompanied by an educational and entertaining video series.
+        Learn how to install, setup, configure & begin building applications with Overlord by checking out our
+        beautifully crafted documentation which is accompanied by an educational and entertaining video series.
       </Text>
       <TextButton
         text="View Documentation"
