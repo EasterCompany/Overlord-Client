@@ -399,7 +399,7 @@ const DocumentViewer = ({ title, navIsVisible, isDarkMode, content }) => {
         paddingBottom: 48,
         borderRadius: 8,
         backgroundColor: isDarkMode ? '#202029EE' : '#FFFFFFEE',
-        boxShadow: '0px 0px 8px #000000AA',
+        boxShadow: '0px 0px 8px #00000099',
         transition: 'all ease-in-out 0.64s'
       }}>
         <Markdown style={MarkdownStyle} mergeStyle={false}>
