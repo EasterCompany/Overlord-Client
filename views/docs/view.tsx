@@ -3,7 +3,7 @@ import style from './style';
 // Components
 import Sidebar from '../../components/sidebar/sidebar';
 // Library
-import { POST } from '../../shared/library/api';
+import { POST, cookie } from '../../shared/library/api';
 import { useState, useEffect } from 'react';
 // Views
 import DocumentViewer from './viewer/view';

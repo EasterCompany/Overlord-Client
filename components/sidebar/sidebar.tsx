@@ -15,7 +15,7 @@ import ImageButton from '../../shared/components/button/image';
 // Hooks
 import useDimensions from '../../shared/hooks/useDimensions';
 // Library
-import { api } from '../../shared/library/api';
+import { api, createCookie } from '../../shared/library/api';
 import { useState, useRef, useEffect } from 'react';
 import { View, ScrollView, Pressable, Image, Text, Animated, Platform, NativeEventEmitter } from 'react-native';
 
@@ -41,23 +41,24 @@ const SideBar = ({ isVisible, setVisible, isDarkMode, setDarkMode }) => {
     if (docs === null) api(
       'documentation/survey',
       (resp) => setDocs({}),
-      (resp) => {
-        setDocs(resp);
-        console.log(resp);
-      }
+      (resp) => setDocs(resp)
     );
 
     return () => toggleVisibleEvent.remove();
   }, [isVisible])
 
   return <Animated.View style={[ style.container, { left: slideAnimation } ]}>
-    <Header isDarkMode={isDarkMode} toggleDarkMode={() => setDarkMode(!isDarkMode)} isVisible={isVisible}/>
+    <Header
+      isDarkMode={isDarkMode}
+      isVisible={isVisible}
+      toggleDarkMode={() => setDarkMode(!isDarkMode)}
+    />
     <ScrollView style={[ style.scrollContainer, { height: v.height - 48 } ]}>
-      {docs !== null && Object.keys(docs).map((x) => {
+      {docs !== null && Object.keys(docs).map((x, idx) => {
         const category = docs[x];
-        return <Dropdown label={category.title} openByDefault={true}>
-          {category.docs.map((doc) => {
-            return <Option label={doc.title} docId={`${category.source}/${doc.source}`}/>
+        return <Dropdown key={idx} label={category.title} openByDefault={true}>
+          {category.docs.map((doc, idx) => {
+            return <Option key={idx} label={doc.title} docId={`${category.source}/${doc.source}`}/>
           })}
         </Dropdown>
       })}

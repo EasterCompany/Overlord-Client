@@ -286,7 +286,6 @@ const DocumentViewer = ({ title, navIsVisible, isDarkMode, content }) => {
       flexWrap: 'wrap',
       top: 52,
       width: '100%',
-      maxWidth: 1280,
       height: (v.height / 2) - 52,
       paddingBottom: 16,
       transition: 'all ease-in-out 0.64s'
@@ -389,15 +388,12 @@ const DocumentViewer = ({ title, navIsVisible, isDarkMode, content }) => {
       </>
       :
       <View style={{
-        alignSelf: 'center',
         width: '100%',
-        maxWidth: 1280,
         minHeight: (v.height / 2) - 16,
         marginTop: v.height / 2,
-        marginBottom: 64,
-        padding: 32,
-        paddingBottom: 48,
-        borderRadius: 8,
+        marginBottom: 128,
+        padding: '10%',
+        borderRadius: 3,
         backgroundColor: isDarkMode ? '#202029EE' : '#FFFFFFEE',
         boxShadow: '0px 0px 8px #00000099',
         transition: 'all ease-in-out 0.64s'
