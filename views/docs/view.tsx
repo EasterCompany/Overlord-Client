@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 import DocumentViewer from './viewer/view';
 
 const Docs = ({ currentView }) => {
-  const [isDarkMode, setDarkMode] = useState(false);
+  const [isDarkMode, setDarkMode] = useState(true);
   const [navIsVisible, setNavVisible] = useState(true);
   const [document, setDocument] = useState({
     title: undefined,

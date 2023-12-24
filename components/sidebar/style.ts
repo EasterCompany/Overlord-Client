@@ -8,10 +8,13 @@ export default StyleSheet.create({
     left: 0,
     width: "100%",
     maxWidth: 350,
-    backgroundColor: "#20202966",
+    backgroundColor: "#20202999",
     backdropFilter: "blur(8px)",
     webKitBackdropFilter: "blur(8px)",
-    boxShadow: "0 1px 5px #00000033"
+    elevation: 5,
+    webkitBoxShadow: "0px 0px 5px #00000099",
+    mozBoxShadow: "0px 0px 5px #00000099",
+    boxShadow: "0px 0px 5px #00000099"
   },
 
   header: {
@@ -51,7 +54,7 @@ export default StyleSheet.create({
   },
 
   headerButtonContainerHover: {
-    backgroundColor: "#F0F0F010"
+    backgroundColor: "#FFFFFF11"
   },
 
   headerButtonImage: {
@@ -78,7 +81,7 @@ export default StyleSheet.create({
   },
 
   dropdownHeaderHover: {
-    backgroundColor: "#F0F0F010"
+    backgroundColor: "#FFFFFF11"
   },
 
   dropdownLabel: {

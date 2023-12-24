@@ -378,10 +378,10 @@ const DocumentViewer = ({ title, navIsVisible, isDarkMode, content }) => {
             borderRadius: 6,
             borderTopRightRadius: 0,
             borderBottomRightRadius: 0,
-            backgroundColor: '#00000033'
+            backgroundColor: "#00000033"
           }}
           containerHoverStyle={{
-            backgroundColor: "#F0F0F010"
+            backgroundColor: "#FFFFFF11"
           }}
           onPress={() => setVideo(false)}
         />
@@ -394,8 +394,13 @@ const DocumentViewer = ({ title, navIsVisible, isDarkMode, content }) => {
         marginBottom: 128,
         padding: '10%',
         borderRadius: 3,
-        backgroundColor: isDarkMode ? '#202029EE' : '#FFFFFFEE',
-        boxShadow: '0px 0px 8px #00000099',
+        backgroundColor: isDarkMode ? '#202029DD' : '#FFFFFFDD',
+        backdropFilter: "blur(8px)",
+        webKitBackdropFilter: "blur(8px)",
+        elevation: 5,
+        webkitBoxShadow: "0px 0px 5px #00000099",
+        mozBoxShadow: "0px 0px 5px #00000099",
+        boxShadow: "0px 0px 5px #00000099",
         transition: 'all ease-in-out 0.64s'
       }}>
         <Markdown style={MarkdownStyle} mergeStyle={false}>
